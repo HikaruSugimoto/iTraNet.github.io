@@ -70,11 +70,17 @@
         .button:hover {
             background-color: #777;
         }
+        a[href="https://github.com/WestHealth/pyvis/issues/25"] {
+            color: aqua;
+        }
+        a[href="https://doi.org/10.1101/2023.11.30.569499"] {
+            color: aqua;
+        }
     </style>
 </head>
 <body>
     <div class="sidebar">
-        <div class="title">Select an analysis method</div>
+        <div class="subheader">Select an analysis method</div>
         <a href="https://itranet-a.streamlit.app/" class="button">A, gene regulatory network</a>
         <a href="https://itranet-b.streamlit.app/" class="button">B, mRNA (protein)-mRNA (protein) interaction</a>
         <a href="https://itranet-c.streamlit.app/" class="button">C, metabolic network</a>
@@ -90,10 +96,13 @@
             
             <div class="subheader">Select an analysis method</div>
             <img src="./Fig/2.png" alt="" class="image">
-            <!-- 2A.txt, 2B.txt, 2C.txt, 2D.txt の内容をここに追加 -->
-
+            <p>"A, gene regulatory network (including TF, miRNA, and mRNA)" estimates transcription factors (TF) and miRNAs associated with the uploaded transcriptome data (organ or cell). The associated TF and miRNA are estimated using the ChIP-Atlas (https://chip-atlas.org/enrichment_analysis) and miRTarBase (https://mirtarbase.cuhk.edu.cn/~miRTarBase/miRTarBase_2022/php/download.php) databases, respectively.</p>
+            <p>“B, mRNA (protein)-mRNA (protein) interaction” estimates mRNAs (proteins) associated with the uploaded transcriptome (proteome) data (organ or cell). The association is based on protein-protein interactions and is estimated using the STRING database (https://string-db.org/cgi/download?sessionId=b7GipzHI6zXz). </p>
+            <p>“C, metabolic network (including enzyme, mRNA, and metabolite)” estimates metabolic reactions and enzymes associated with the uploaded transcriptome (organ or cell) and metabolome data (organ or cell). Metabolic reactions are assumed to be catalyzed by metabolic enzymes and affected by metabolites that function as the substrates, products, or allosteric regulators. Regulation of metabolic reactions also consists of regulations by changing the amount of enzyme through gene expression. This inference draws from analysis of data from KEGG (https://www.kegg.jp/kegg/rest/) and BRENDA (https://www.brenda-enzymes.org/oldstart.php).</p>
+            <p>“D, metabolite exchange network (including transporter, mRNA, and metabolite)” estimates transporters associated with the uploaded transcriptome (organ or cell), metabolome (organ or cell), and metabolome (blood or medium) data. Transporters are assumed to be affected by the amount of metabolites and regulations by changing the amount of transporter gene expression. This inference draws from analysis of data from The Transporter Classification Database (TCDB) (https://www.tcdb.org/).</p>
+            
             <div class="subheader">License</div>
-            <!-- 4.txt の内容をここに追加 -->
+            <p>This web app is licensed free of charge and we shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use of this web app. In addition, we are under no obligation to provide maintenance, support, updates, enhancements, or modifications.</p>
 
             <div class="subheader">Help</div>
             <p>If loading bars of interactive networks show 0%, please visit the following URL: <a href="https://github.com/WestHealth/pyvis/issues/25">https://github.com/WestHealth/pyvis/issues/25</a></p>
